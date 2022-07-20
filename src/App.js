@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Routes, Route, Link} from "react-router-dom";
 import './App.css';
+import Home from "./views/home.js"
 
 function App() {
   return (
@@ -22,20 +23,7 @@ function App() {
     </div>
  )}
 
-function Home() {
-  return (
-      <>
-        <main>
-          <h2>Ingresa</h2>
-          <button id="postres"><Link to="/Chef">Chef</Link></button>
-          <button id="postres"><Link to="/Mesero">Mesero</Link></button>
-        </main>
-        {/* <nav>
-          <Link to="/about">About</Link>
-        </nav> */}
-      </>
-    );
-  }
+
   function Chef() {
     return (
       <div className="Chef">
