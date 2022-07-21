@@ -2,6 +2,8 @@ import * as React from "react";
 import { Routes, Route, Link} from "react-router-dom";
 import './App.css';
 import Home from "./views/home.js"
+import Mesero from "./views/order.js"
+import Chef from "./views/preparation.js"
 
 function App() {
   return (
@@ -16,20 +18,10 @@ function App() {
     </div>
  )}
 
- function Mesero() {
-  return (
-    <div className="Mesero">
-      <h2>Ingresa tu pedido</h2>
-    </div>
- )}
 
 
-  function Chef() {
-    return (
-      <div className="Chef">
-        <h2>Pedidos</h2>
-      </div>
-   )}
+
+  
 
   
   // function About() {
