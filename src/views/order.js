@@ -1,5 +1,8 @@
+import {Link} from "react-router-dom";
+
 function Mesero() {
     return (
+    <>
       <div className="Mesero">
         <h2>Nombre del cliente:</h2>
         <button id="postres">Entradas</button>
@@ -12,5 +15,6 @@ function Mesero() {
          <p>Total:$</p>  
         </div>
       </div>
+    </>
    )}
    export default Mesero
