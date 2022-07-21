@@ -5,7 +5,7 @@ function Home() {
     return (
         <>
           <main>
-            <h2>Ingresa</h2>
+            <h2>¿Quien eres?</h2>
             <button id="postres"><Link to="/Chef">Chef</Link></button>
             <button id="postres"><Link to="/Mesero">Mesero</Link></button>
           </main>
