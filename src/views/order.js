@@ -9,17 +9,16 @@ function Mesero() {
   const dropdownRef = useRef(null);
   const [isActive, setIsActive] = useDetectOutsideClick(dropdownRef, false);
   const onClick = () => setIsActive(!isActive);
-  //Funcion para mostrar cliente
+    //Funcion para mostrar cliente
     const [save, setSave] = useState("");
+    const handleSubmit = (ev) => {ev.preventDefault();
+      setSave(ev.target.save.value);}
     return (
     <>
       <div className="Mesero">
         <h2>Nombre del cliente:</h2>
       </div>
-        <form onSubmit={ev => {
-          ev.preventDefault();
-          setSave(ev.target.save.value);  
-        }}
+        <form onSubmit={(ev)=> handleSubmit(ev)}
         >
         <input type="text" name="save" autoComplete="off"></input>
         <button className="postres" type="submit">Ingresar cliente</button>
