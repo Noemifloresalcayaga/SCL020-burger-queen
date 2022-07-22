@@ -1,15 +1,21 @@
 import {useState, useRef} from "react";
 import style from "./order.css";
-import { useDetectOutsideClick } from "./useDetectOutsideClick.js";
+
 
 
 
 function Mesero() {
   //Funcion menu desplegable
+  const [menuId,setMenuId] = useState(0);
   const dropdownRef = useRef(null);
-  const [isActive, setIsActive] = useDetectOutsideClick(dropdownRef, false);
-  const onClick = () => setIsActive(!isActive);
-    //Funcion para mostrar cliente
+  const onClick = (id) => {
+    if(menuId == id) {
+      setMenuId(0)
+    } else {
+      setMenuId(id)
+    }
+  };
+  //Funcion para mostrar cliente
     const [save, setSave] = useState("");
     const handleSubmit = (ev) => {ev.preventDefault();
       setSave(ev.target.save.value);}
@@ -20,18 +26,18 @@ function Mesero() {
       </div>
         <form onSubmit={(ev)=> handleSubmit(ev)}
         >
-        <input type="text" name="save" autoComplete="off"></input>
-        <button className="postres" type="submit">Ingresar cliente</button>
+        <input className="save" type="text" name="save" autoComplete="off"></input>
+        <button className="cliente" type="submit">Ingresar cliente</button>
         <p>Pedido de: {save}</p>
         </form>
       <div className="container">
       <div className="menu-postres">
-        <button onClick={onClick} className="opciones">
+        <button onClick={()=> onClick(1)} className="opciones">
           <span className="postres">Postres</span>
         </button>
         <nav
           ref={style.dropdownRef}
-          className={`menu ${isActive ? "active" : "inactive"}`}
+          className={`menu ${menuId == 1 ? "active" : "inactive"}`}
         >
           <ul>
             <li>
@@ -47,12 +53,12 @@ function Mesero() {
         </nav>
       </div>
       <div className="menu-entradas">
-        <button onClick={onClick} className="opciones">
+        <button onClick={()=> onClick(2)} className="opciones">
           <span className="postres">Entradas</span>
         </button>
         <nav
           ref={style.dropdownRef}
-          className={`menu ${isActive ? "active" : "inactive"}`}
+          className={`menu ${menuId == 2 ? "active" : "inactive"}`}
         >
           <ul>
             <li>
@@ -68,12 +74,12 @@ function Mesero() {
         </nav>
       </div>
       <div className="menu-hamburguesas">
-        <button onClick={onClick} className="opciones">
+        <button  onClick={()=> onClick(3)} className="opciones">
           <span className="postres">Hamburguesas</span>
         </button>
         <nav
           ref={style.dropdownRef}
-          className={`menu ${isActive ? "active" : "inactive"}`}
+          className={`menu ${menuId == 3 ?"active" : "inactive"}`}
         >
           <ul>
             <li>
@@ -91,12 +97,12 @@ function Mesero() {
     
     
       <div className="menu-acomp">
-        <button onClick={onClick} className="opciones">
+        <button onClick={()=> onClick(4)} className="opciones">
           <span className="postres">Acompañamientos</span>
         </button>
         <nav
           ref={style.dropdownRef}
-          className={`menu ${isActive ? "active" : "inactive"}`}
+          className={`menu ${menuId == 4 ? "active" : "inactive"}`}
         >
           <ul>
             <li>
@@ -112,13 +118,12 @@ function Mesero() {
         </nav>
       </div>
     </div>
-        <div>
-         <p>Items:</p>   
-         <button className="postres" id="postres">Enviar</button>
-         <p>Total:$</p>  
-    
-    
-  </div>
+      <div className="pedido">
+      <p>Items:</p>   
+      <p>Total:$</p>
+      </div>
+      <button className="enviar" id="postres">Enviar</button>
+
     </>
    )}
 
