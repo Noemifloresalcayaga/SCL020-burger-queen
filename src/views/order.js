@@ -22,7 +22,7 @@ function Mesero() {
     return (
     <>
       <div className="Mesero">
-        <h2>Nombre del cliente:</h2>
+        <h2>Nuestros pedidos hoy</h2>
       </div>
         <form onSubmit={(ev)=> handleSubmit(ev)}
         >
@@ -118,12 +118,15 @@ function Mesero() {
         </nav>
       </div>
     </div>
-      <div className="pedido">
+      <footer>
+     
       <p>Items:</p>   
-      <p>Total:$</p>
-      </div>
+      <p className="total">Total:$</p>
+      
+      
+      
       <button className="enviar" id="postres">Enviar</button>
-
+      </footer>
     </>
    )}
 

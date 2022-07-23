@@ -19,7 +19,9 @@
     height: 50px;
     font-size: 15px;
     border-radius: 30px;
+    background-color: #C7DA88;
   }
+  
   .save{
     font-family: 'Montserrat', sans-serif;
     width: 170px;
@@ -28,26 +30,42 @@
     border-radius: 20px;
   }
 
-  .pedido{
+  footer{
+    position: fixed;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+  
+   
     font-family: 'Montserrat', sans-serif;
-    font-size: 15px;
-    border-radius: 30px;
+    font-size: 30px;
+    
+    left: 0;
+    bottom: 0;
+   
+    width: 100vw;
+    height: 400px;
+    background-color: #C7DA88;
+    
   }
 
   .enviar{
-    
-    justify-content: right;
-    align-items: right;
-    text-align: right;
+    position: absolute;
+    left: 550px;
+    top: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-family: 'Montserrat', sans-serif;
-    font-size: 15px;
+    font-size: 25px;
     border-radius: 30px;
-
+    width: 170px;
+    height: 50px;
+    background-color: #D35E18;
+    color: #fff;
+  }
+ 
+  .total{
+    top: 400px;
   }
   
   
@@ -56,8 +74,11 @@
     width: 170px;
     height: 50px;
     font-size: 15px;
-    
+    background-color: #C7DA88;
   }
+    
+    
+  
   .menu-container {
    display: flex;
    align-content: center;
@@ -85,12 +106,17 @@
     border: none;
     vertical-align: middle;
     transition: box-shadow 0.6s ease;
-    /* Strictly for positioning */
+    background-color: #C7DA88;
+    font-family: 'Montserrat', sans-serif;
   }
+    /* Strictly for positioning */
+  
   
   .opciones:hover {
     box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
+  
   }
+  
   
   .opciones span {
     display: flex;
@@ -100,12 +126,10 @@
     vertical-align: middle;
     font-size: 17px;
     margin: 0 10px;
+    
   }
   
-  .opciones img {
-    border-radius: 90px;
-  }
-  
+ 
   .menu {
     background: #ffffff;
     border-radius: 8px;
