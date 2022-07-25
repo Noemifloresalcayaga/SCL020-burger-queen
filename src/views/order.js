@@ -15,6 +15,9 @@ function Mesero() {
       setMenuId(id)
     }
   };
+  
+  //aqui deberian ir las funciones de la priemra vista?
+
   //Funcion para mostrar cliente
     const [save, setSave] = useState("");
     const handleSubmit = (ev) => {ev.preventDefault();
@@ -60,7 +63,7 @@ function Mesero() {
           ref={style.dropdownRef}
           className={`menu ${menuId == 2 ? "active" : "inactive"}`}
         >
-          <ul>
+          <ul >
             <li>
               <a href="#">Sopa de tofu</a>
             </li>
