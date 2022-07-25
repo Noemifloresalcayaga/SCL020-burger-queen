@@ -22,15 +22,15 @@ function Mesero() {
     return (
     <>
       <div className="Mesero">
-        <h2>Nuestros pedidos hoy</h2>
+        <h2>Nuestros pedidos hoy</h2> //header
       </div>
-        <form onSubmit={(ev)=> handleSubmit(ev)}
+        <form onSubmit={(ev)=> handleSubmit(ev)} //nombre
         >
         <input className="save" type="text" name="save" autoComplete="off"></input>
         <button className="cliente" type="submit">Ingresar cliente</button>
         <p>Pedido de: {save}</p>
         </form>
-      <div className="container">
+      <div className="container"> //menú
       <div className="menu-postres">
         <button onClick={()=> onClick(1)} className="opciones">
           <span className="postres">Postres</span>
@@ -104,7 +104,7 @@ function Mesero() {
           ref={style.dropdownRef}
           className={`menu ${menuId == 4 ? "active" : "inactive"}`}
         >
-          <ul>
+          <ul className="acom">
             <li>
               <a href="#">Papas fritas</a>
             </li>
@@ -120,7 +120,7 @@ function Mesero() {
     </div>
       <footer>
      
-      <p>Items:</p>   
+      <p>Items:</p>   // footer
       <p className="total">Total:$</p>
       
       
