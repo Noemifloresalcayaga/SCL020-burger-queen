@@ -85,8 +85,22 @@
     font-size: 15px;
     background-color: #C7DA88;
   }
+  
+  .menu-postres {
+    position: relative;
     
-    
+  }
+  .menu-acomp {
+    position: relative;
+  }
+
+  .menu-entradas{
+    position: relative;
+  } 
+
+  .menu-hamburguesas {
+    position: relative;
+  }
   
   .menu-container {
    display: flex;
@@ -143,8 +157,8 @@
     background: #ffffff;
     border-radius: 8px;
     position: absolute;
-    right: 409px;
-    top: 360px;
+    right: 0px;
+    top: 60px;
     width: 300px;
     box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
     opacity: 0;
