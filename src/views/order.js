@@ -21,16 +21,16 @@ function Mesero() {
       setSave(ev.target.save.value);}
     return (
     <>
-      <div className="Mesero">
-        <h2>Nuestros pedidos hoy</h2> //header
-      </div>
-        <form onSubmit={(ev)=> handleSubmit(ev)} //nombre
+      <div className="parent">
+        <h2 className="div1 titulo">Nuestros pedidos hoy</h2>
+      
+        <form className="div2 nombre"  onSubmit={(ev)=> handleSubmit(ev)} //nombre
         >
         <input className="save" type="text" name="save" autoComplete="off"></input>
         <button className="cliente" type="submit">Ingresar cliente</button>
         <p>Pedido de: {save}</p>
         </form>
-      <div className="container"> //menú
+      <div className="div3 items grid">
       <div className="menu-postres">
         <button onClick={()=> onClick(1)} className="opciones">
           <span className="postres">Postres</span>
@@ -118,15 +118,12 @@ function Mesero() {
         </nav>
       </div>
     </div>
-      <footer>
-     
-      <p>Items:</p>   // footer
-      <p className="total">Total:$</p>
-      
-      
-      
-      <button className="enviar" id="postres">Enviar</button>
+      <footer className="div4 footer">
+      <p className="total">Items:</p>
+      <p className="despliegue">Total:$</p>
+      <button  className="enviar" id="postres">Enviar</button>
       </footer>
+      </div>
     </>
    )}
 
