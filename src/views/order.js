@@ -1,5 +1,6 @@
 import {useState, useRef} from "react";
 import style from "./order.css";
+// import data from "./data/data.js"
 
 
 
@@ -97,8 +98,6 @@ function Mesero() {
           </ul>
         </nav>
       </div>
-    
-    
       <div className="menu-acomp">
         <button onClick={()=> onClick(4)} className="opciones">
           <span className="postres">Acompañamientos</span>
