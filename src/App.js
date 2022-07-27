@@ -8,7 +8,7 @@ import Chef from "./views/preparation.js"
 function App() {
   return (
     <div className="App">
-      <h1>VeggieHappy</h1>
+      <img  className="logo" src={require("./img/logo.png")} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/Mesero" element={<Mesero/>} />

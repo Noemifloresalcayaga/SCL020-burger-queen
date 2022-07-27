@@ -7,20 +7,19 @@
     background-image: url(../img/mesero.png);
     background-repeat: no-repeat;
   }
-
+/* 
   .nombre{
     margin-top: -124px;
     margin-bottom: 100px;
-  }
-
+  } */
+/* 
   .items {
-    margin-top: -124px;
+    
     margin-bottom: 100px;
-  }
+  } */
 
   .titulo {
     display: flex;
-    margin-top: 38px;
     flex-direction: column;
   }
 
@@ -53,7 +52,6 @@
     bottom: 0;
    
     width: 100vw;
-    height: 400px;
     background-color: #C7DA88;
     
   }
@@ -88,18 +86,26 @@
   
   .menu-postres {
     position: relative;
+    display: flex;
+    justify-content: center;
     
   }
   .menu-acomp {
     position: relative;
+    display: flex;
+    justify-content: center
   }
 
   .menu-entradas{
     position: relative;
+    display: flex;
+    justify-content: center
   } 
 
   .menu-hamburguesas {
     position: relative;
+    display: flex;
+    justify-content: center
   }
   
   .menu-container {
@@ -172,6 +178,7 @@
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
+    z-index: 10;
   }
   
   .menu ul {
@@ -209,7 +216,7 @@
   {  display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr;
-    gap: 0px 0px;
+    gap: 58px 2px;
     grid-auto-flow: row dense;
     grid-template-areas:
       "."
@@ -247,7 +254,6 @@
   .parent {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
     gap: 0px 0px;
     grid-auto-flow: row dense;
     grid-template-areas:
