@@ -8,6 +8,7 @@ function Home() {
             <h2>¿Quien eres?</h2>
             <button id="postres"><Link to="/Chef">Chef</Link></button>
             <button id="postres"><Link to="/Mesero">Mesero</Link></button>
+            <button id="postres"><Link to="/Test">Test</Link></button>
           </main>
           {/* <nav>
             <Link to="/about">About</Link>

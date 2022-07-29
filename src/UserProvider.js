@@ -3,11 +3,11 @@ import React, {useState, useContext} from "react";
 const userContext = React.createContext();
 const userToggleContext = React.createContext();
 
-export function useUserContext() {
+export function useUserContext(){
     return useContext(userContext);
 }
 
-export function useUserToggleContext() {
+export function useUserToggleContext(){
     return useContext(userToggleContext); 
 }
 
