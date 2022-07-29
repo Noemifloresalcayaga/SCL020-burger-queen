@@ -1,6 +1,5 @@
 import {useState, useRef} from "react";
 import style from "./order.css";
-// import data from "./data/data.js"
 
 
 
@@ -27,10 +26,8 @@ function Mesero() {
     <>
       <div className="parent">
         <h2 className="div1 titulo">Nuestros pedidos hoy</h2>
-      
-        <form className="div2 nombre"  onSubmit={(ev)=> handleSubmit(ev)} //nombre
-        >
-        <input className="save" type="text" name="save" autoComplete="off"></input>
+        <form className="div2 nombre"  onSubmit={(ev)=> handleSubmit(ev)} >
+        <input className="save" type="text" name="save" autoComplete="off" placeholder="Ingresa nombre"></input>
         <button className="cliente" type="submit">Ingresar cliente</button>
         <p>Pedido de: {save}</p>
         </form>

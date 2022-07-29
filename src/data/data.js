@@ -1,21 +1,18 @@
-data = {
+"data" = {
   "Postres": [
     {
       "id": "1",
       "name": "Pie de limon",
-      "amount": "0",
       "price": "2500",
     },
     {
       "id": "2",
       "name": "Brownie VeggieHappy",
-      "amount": "0",
       "price": "3500",
     },
     {
       "id": "3",
       "name": "Flan de tofu",
-      "amount": "0",
       "price": "2500",
     },
   ],
@@ -23,19 +20,16 @@ data = {
     {
       "id": "4",
       "name": "Sopa de tofu",
-      "amount": "0",
       "price": "4500",
     },
     {
       "id": "5",
       "name": "Palta reina",
-      "amount": "0",
       "price": "7500",
     },
     {
       "id": "6",
       "name": "Happy bowl",
-      "amount": "0",
       "price": "7500",
     },
   ],
@@ -43,19 +37,16 @@ data = {
     {
       "id": "7",
       "name": "Seitan Burguer",
-      "amount": "0",
       "price": "6000",
     },
     {
       "id": "8",
       "name": "Tofu Burguer",
-      "amount": "0",
       "price": "6000",
     },
     {
       "id": "9",
       "name": "Falafel Burguer",
-      "amount": "0",
       "price": "6000",
     },
   ],
