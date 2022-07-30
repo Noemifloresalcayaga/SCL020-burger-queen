@@ -4,6 +4,8 @@ import './App.css';
 import Home from "./views/home.js"
 import Mesero from "./views/order.js"
 import Chef from "./views/preparation.js"
+import { UserProvider } from "./userProvider";
+
 //useState guarda los estados dentro de nuestras aplicacione.
 
 //guardar un usuario y como hacer un login.
@@ -15,11 +17,13 @@ function App() {
   return (
     <div className="App">
       <img  className="logo" src={require("./img/logo.png")} alt="logo" />
+      <UserProvider>
        <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/Mesero" element={<Mesero/>} />
         <Route path="/Chef" element={<Chef/>} />
         </Routes>
+      </UserProvider>
         
 
 

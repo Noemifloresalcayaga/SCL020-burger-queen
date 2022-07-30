@@ -1,7 +1,6 @@
 import React, {useState, useRef} from "react";
 import style from "./order.css";
 import Nombre from "../components/Nombre"
-import { UserProvider } from "../components/userProvider";
 
 
 
@@ -22,7 +21,6 @@ function Mesero() {
   //map
     return (
     <>
-    <UserProvider>
       <div className="parent">
         <h2 className="div1 titulo">Nuestros pedidos hoy</h2>
         <Nombre/>
@@ -118,7 +116,7 @@ function Mesero() {
       <button  className="enviar" id="postres">Enviar</button>
       </footer>
       </div>
-      </UserProvider>
+  
     </>
    )}
 
