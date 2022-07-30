@@ -5,7 +5,6 @@ import Home from "./views/home.js"
 import Mesero from "./views/order.js"
 import Chef from "./views/preparation.js"
 //useState guarda los estados dentro de nuestras aplicacione.
-import Test from "./views/test";
 
 //guardar un usuario y como hacer un login.
 //se exporta para ocuparlo en cualquier otro sitio.
@@ -20,7 +19,6 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/Mesero" element={<Mesero/>} />
         <Route path="/Chef" element={<Chef/>} />
-        <Route path="/Test" element={<Test/>} />
         </Routes>
         
 

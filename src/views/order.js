@@ -1,11 +1,14 @@
-import {useState, useRef} from "react";
+import React, {useState, useRef} from "react";
 import style from "./order.css";
+import Nombre from "../components/Nombre"
+import { UserProvider } from "../components/userProvider";
 
 
 
 
 function Mesero() {
   //Funcion menu desplegable
+  //menuid i set menuid
   const [menuId,setMenuId] = useState(0);
   const dropdownRef = useRef(null);
   const onClick = (id) => {
@@ -15,22 +18,14 @@ function Mesero() {
       setMenuId(id)
     }
   };
-  
-  //aqui deberian ir las funciones de la priemra vista?
 
-  //Funcion para mostrar cliente
-    const [save, setSave] = useState("");
-    const handleSubmit = (ev) => {ev.preventDefault();
-      setSave(ev.target.save.value);}
+  //map
     return (
     <>
+    <UserProvider>
       <div className="parent">
         <h2 className="div1 titulo">Nuestros pedidos hoy</h2>
-        <form className="div2 nombre"  onSubmit={(ev)=> handleSubmit(ev)} >
-        <input className="save" type="text" name="save" autoComplete="off" placeholder="Ingresa nombre"></input>
-        <button className="cliente" type="submit">Ingresar cliente</button>
-        <p>Pedido de: {save}</p>
-        </form>
+        <Nombre/>
       <div className="div3 items grid">
       <div className="menu-postres">
         <button onClick={()=> onClick(1)} className="opciones">
@@ -41,7 +36,7 @@ function Mesero() {
           className={`menu ${menuId == 1 ? "active" : "inactive"}`}
         >
           <ul>
-            <li>
+            <li>           
               <a href="#">Pie de Limón</a>
             </li>
             <li>
@@ -123,6 +118,7 @@ function Mesero() {
       <button  className="enviar" id="postres">Enviar</button>
       </footer>
       </div>
+      </UserProvider>
     </>
    )}
 
