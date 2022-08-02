@@ -1,9 +1,6 @@
 import React, {useState, useRef} from "react";
-import style from "./order.css";
-import Nombre from "../components/Nombre"
-
-
-
+import style from "./order.css"
+import Nombre from "./Nombre"
 
 function Mesero() {
   //Funcion menu desplegable
@@ -17,14 +14,13 @@ function Mesero() {
       setMenuId(id)
     }
   };
-
   //map
     return (
     <>
       <div className="parent">
         <h2 className="div1 titulo">Nuestros pedidos hoy</h2>
         <Nombre/>
-      <div className="div3 items grid">
+        <div className="div3 items grid">
       <div className="menu-postres">
         <button onClick={()=> onClick(1)} className="opciones">
           <span className="postres">Postres</span>
@@ -116,6 +112,8 @@ function Mesero() {
       <button  className="enviar" id="postres">Enviar</button>
       </footer>
       </div>
+
+
   
     </>
    )}
