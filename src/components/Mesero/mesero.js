@@ -1,6 +1,7 @@
 import React, {useState, useRef} from "react";
 import style from "./order.css"
 import Nombre from "./Nombre"
+import postre from "./Menu"
 
 function Mesero() {
   //Funcion menu desplegable
@@ -30,15 +31,7 @@ function Mesero() {
           className={`menu ${menuId == 1 ? "active" : "inactive"}`}
         >
           <ul>
-            <li>           
-              <a href="#">Pie de Limón</a>
-            </li>
-            <li>
-              <a href="#">Brownie VeggieHappy</a>
-            </li>
-            <li>
-              <a href="#">Flan de tofu</a>
-            </li>
+          {postre}
           </ul>
         </nav>
       </div>
