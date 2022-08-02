@@ -1,4 +1,4 @@
-"data" = {
+  export default {
   "Postres": [
     {
       "id": "1",
@@ -71,4 +71,6 @@
       "price": "3500",
     },
   ],
-};
+ };
+
+ 
