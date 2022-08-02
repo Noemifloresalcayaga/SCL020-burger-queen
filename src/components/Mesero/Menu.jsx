@@ -1,13 +1,9 @@
-import React, {useState, useRef} from "react";
-import style from "./order.css";
-import Nombre from "../components/Nombre"
+import { useState, useRef } from "react";
+import style from "./order.css"
 
 
+const Menu = () => {
 
-
-function Mesero() {
-  //Funcion menu desplegable
-  //menuid i set menuid
   const [menuId,setMenuId] = useState(0);
   const dropdownRef = useRef(null);
   const onClick = (id) => {
@@ -16,14 +12,8 @@ function Mesero() {
     } else {
       setMenuId(id)
     }
-  };
-
-  //map
-    return (
-    <>
-      <div className="parent">
-        <h2 className="div1 titulo">Nuestros pedidos hoy</h2>
-        <Nombre/>
+    return
+      <div>
       <div className="div3 items grid">
       <div className="menu-postres">
         <button onClick={()=> onClick(1)} className="opciones">
@@ -115,9 +105,8 @@ function Mesero() {
       <p className="despliegue">Total:$</p>
       <button  className="enviar" id="postres">Enviar</button>
       </footer>
-      </div>
-  
-    </>
-   )}
+    </div>  
+} 
+};
 
-   export default Mesero
+  export default Menu;
