@@ -1,10 +1,6 @@
 import React, {useState, useRef} from "react";
 import style from "./order.css"
 import Nombre from "./Nombre"
-import Menu from "./Menu"
-
-
-
 
 function Mesero() {
   //Funcion menu desplegable
