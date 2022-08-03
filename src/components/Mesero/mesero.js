@@ -1,7 +1,8 @@
 import React, {useState, useRef} from "react";
 import style from "./order.css"
 import Nombre from "./Nombre"
-import postre from "./Menu"
+import {MenuPostres, MenuEntradas, MenuHamburguesas }from"./Menu.js"
+
 
 function Mesero() {
   //Funcion menu desplegable
@@ -28,11 +29,10 @@ function Mesero() {
         </button>
         <nav
           ref={style.dropdownRef}
-          className={`menu ${menuId == 1 ? "active" : "inactive"}`}
-        >
-          <ul>
-          {postre}
-          </ul>
+          className={`menu ${menuId == 1 ? "active" : "inactive"}`}>
+          
+          <MenuPostres/>
+          
         </nav>
       </div>
       <div className="menu-entradas">
@@ -41,19 +41,9 @@ function Mesero() {
         </button>
         <nav
           ref={style.dropdownRef}
-          className={`menu ${menuId == 2 ? "active" : "inactive"}`}
-        >
-          <ul >
-            <li>
-              <a href="#">Sopa de tofu</a>
-            </li>
-            <li>
-              <a href="#">Palta reina</a>
-            </li>
-            <li>
-              <a href="#">Happy bowl</a>
-            </li>
-          </ul>
+          className={`menu ${menuId == 2 ? "active" : "inactive"}`}>
+          <MenuEntradas/>
+          
         </nav>
       </div>
       <div className="menu-hamburguesas">
@@ -64,17 +54,9 @@ function Mesero() {
           ref={style.dropdownRef}
           className={`menu ${menuId == 3 ?"active" : "inactive"}`}
         >
-          <ul>
-            <li>
-              <a href="#">Seitan Burguer</a>
-            </li>
-            <li>
-              <a href="#">Tofu Burguer</a>
-            </li>
-            <li>
-              <a href="#">Falafel Burguer</a>
-            </li>
-          </ul>
+         
+            <MenuHamburguesas/>
+         
         </nav>
       </div>
       <div className="menu-acomp">
