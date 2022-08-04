@@ -50,25 +50,25 @@
       price: 6000,
     },
   ];
-   const Acompañamientos= [
+export const acompañamientos= [
     {
-      "id": "10",
-      "name": "Papas fritas",
-      "amount": "0",
-      "price": "2500",
+      id: 10,
+      name: "Papas fritas",
+      amount: 0,
+      price: 2500,
     },
     {
-      "id": "11",
-      "name": "Champiñones crujientes",
-      "amount": "0",
-      "price": "3500",
+      id: 11,
+      name: "Champiñones crujientes",
+      amount: 0,
+      price: 3500,
     },
 
     {
-      "id": "12",
-      "name": "Aros de cebolla",
-      "amount": "0",
-      "price": "3500",
+      id: 12,
+      name: "Aros de cebolla",
+      amount: 0,
+      price: 3500,
     },
   ];
  

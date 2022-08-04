@@ -1,7 +1,7 @@
 import React, {useState, useRef} from "react";
 import style from "./order.css"
 import Nombre from "./Nombre"
-import {MenuPostres, MenuEntradas, MenuHamburguesas }from"./Menu.js"
+import {MenuPostres, MenuEntradas, MenuHamburguesas, Acompañamientos}from"./Menu.js"
 
 
 function Mesero() {
@@ -42,7 +42,7 @@ function Mesero() {
         <nav
           ref={style.dropdownRef}
           className={`menu ${menuId == 2 ? "active" : "inactive"}`}>
-          <MenuEntradas/>
+        <MenuEntradas/>
           
         </nav>
       </div>
@@ -55,7 +55,7 @@ function Mesero() {
           className={`menu ${menuId == 3 ?"active" : "inactive"}`}
         >
          
-            <MenuHamburguesas/>
+        <MenuHamburguesas/>
          
         </nav>
       </div>
@@ -67,22 +67,16 @@ function Mesero() {
           ref={style.dropdownRef}
           className={`menu ${menuId == 4 ? "active" : "inactive"}`}
         >
-          <ul className="acom">
-            <li>
-              <a href="#">Papas fritas</a>
-            </li>
-            <li>
-              <a href="#">Champiñones crujientes</a>
-            </li>
-            <li>
-              <a href="#">Aros de cebolla</a>
-            </li>
-          </ul>
+        <Acompañamientos/>
         </nav>
+        
       </div>
     </div>
       <footer className="div4 footer">
       <p className="total">Items:</p>
+      <ul>
+      
+      </ul>
       <p className="despliegue">Total:$</p>
       <button  className="enviar" id="postres">Enviar</button>
       </footer>

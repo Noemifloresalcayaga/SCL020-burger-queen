@@ -179,6 +179,7 @@
     visibility: visible;
     transform: translateY(0);
     z-index: 10;
+
   }
   
   .menu ul {
@@ -189,6 +190,10 @@
   
   .menu li {
     border-bottom: 1px solid #dddddd;
+    text-decoration: none;
+    color: black;
+    padding: 15px 20px;
+    display: block;
   }
   
   .menu li a {
@@ -268,6 +273,7 @@
     .div3 { grid-area: 3 / 1 / 4 / 2; }
     .div4 { grid-area: 4 / 1 / 5 / 2; }
     .div5 { grid-area: 5 / 1 / 6 / 2; }
+
 /* 
     .id1{
       display: flex;
