@@ -1,7 +1,7 @@
 import React, {useState, useRef} from "react";
 import style from "./order.css"
 import Nombre from "./Nombre"
-import {MenuPostres}from"./Menu.js"
+import {MenuPostres, MenuEntradas}from"./Menu.js"
 import {postres, entradas,hamburguesas, acompañamientos} from "./data.js"
 
 
@@ -9,6 +9,8 @@ function Mesero() {
   //Funcion menu desplegable
   //menuid i set menuid
   const [postresMesero, setPostresMesero]  = useState(postres);
+  const [entradasMesero, setEntradasMesero]  = useState(entradas);
+
   const [menuId,setMenuId] = useState(0);
   const dropdownRef = useRef(null);
   const onClick = (id) => {
@@ -24,9 +26,16 @@ function Mesero() {
     const newPostres = [...postresMesero]
    
     const newPostre = newPostres.find((postre)=> id == postre.id)
-    console.log(newPostre)
     newPostre.selected = true
     setPostresMesero(newPostres)
+  }
+
+  function handleSelected (id){  
+    const newEntradas = [...entradasMesero]
+   
+    const newEntrada = newEntradas.find((entrada)=> id == entrada.id)
+    newEntrada.selected = true
+    setEntradasMesero(newEntradas)
   }
   //map
     return (
@@ -57,6 +66,11 @@ function Mesero() {
         <nav
           ref={style.dropdownRef}
           className={`menu ${menuId == 2 ? "active" : "inactive"}`}>
+                    
+          {entradasMesero.map((entradas) => (
+            
+            <MenuEntradas entrada = {entradas} handleSelect = {handleSelected}/>
+          ) )}
           
         </nav>
       </div>
@@ -91,6 +105,11 @@ function Mesero() {
       <>
       <div>{postre.name}</div>
       <div>{postre.price}</div> </> : null
+      ))}
+       {entradasMesero.map((entrada) => (entrada.selected === true ? 
+        <>
+        <div>{entrada.name}</div>
+        <div>{entrada.price}</div> </> : null
       ))}
       </ul>
       <p className="despliegue">Total:$</p>

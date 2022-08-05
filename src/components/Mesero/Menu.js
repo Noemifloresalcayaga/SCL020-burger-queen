@@ -5,9 +5,20 @@ export function MenuPostres ({postre, handleSelect}) {
   const handleClick = () => {
    
       handleSelect(postre.id)
+      
   }
   
-  return (  <ul onClick={handleClick} >{postre.name}</ul> );
+  return (  <li onClick={handleClick} >{postre.name}</li> );
+}
+
+export function MenuEntradas ({entrada, handleSelect}) {
+  const handleClick = () => {
+   
+      handleSelect(entrada.id)
+      
+  }
+  
+  return (  <li onClick={handleClick} >{entrada.name}</li> );
 }
 // export function MenuEntradas () {
 
