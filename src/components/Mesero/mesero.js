@@ -1,12 +1,14 @@
 import React, {useState, useRef} from "react";
 import style from "./order.css"
 import Nombre from "./Nombre"
-import {MenuPostres, MenuEntradas, MenuHamburguesas, Acompañamientos}from"./Menu.js"
+import {MenuPostres}from"./Menu.js"
+import {postres, entradas,hamburguesas, acompañamientos} from "./data.js"
 
 
 function Mesero() {
   //Funcion menu desplegable
   //menuid i set menuid
+  const [postresMesero, setPostresMesero]  = useState(postres);
   const [menuId,setMenuId] = useState(0);
   const dropdownRef = useRef(null);
   const onClick = (id) => {
@@ -16,6 +18,16 @@ function Mesero() {
       setMenuId(id)
     }
   };
+
+  function handleSelect (id) {
+   
+    const newPostres = [...postresMesero]
+   
+    const newPostre = newPostres.find((postre)=> id == postre.id)
+    console.log(newPostre)
+    newPostre.selected = true
+    setPostresMesero(newPostres)
+  }
   //map
     return (
     <>
@@ -31,7 +43,10 @@ function Mesero() {
           ref={style.dropdownRef}
           className={`menu ${menuId == 1 ? "active" : "inactive"}`}>
           
-          <MenuPostres/>
+          {postresMesero.map((postre) => (
+            
+            <MenuPostres postre = {postre} handleSelect = {handleSelect}/>
+          ) )}
           
         </nav>
       </div>
@@ -42,7 +57,6 @@ function Mesero() {
         <nav
           ref={style.dropdownRef}
           className={`menu ${menuId == 2 ? "active" : "inactive"}`}>
-        <MenuEntradas/>
           
         </nav>
       </div>
@@ -55,7 +69,6 @@ function Mesero() {
           className={`menu ${menuId == 3 ?"active" : "inactive"}`}
         >
          
-        <MenuHamburguesas/>
          
         </nav>
       </div>
@@ -67,15 +80,18 @@ function Mesero() {
           ref={style.dropdownRef}
           className={`menu ${menuId == 4 ? "active" : "inactive"}`}
         >
-        <Acompañamientos/>
         </nav>
         
       </div>
     </div>
       <footer className="div4 footer">
+      <ul className="lista">
       <p className="total">Items:</p>
-      <ul>
-      
+      {postresMesero.map((postre) => (postre.selected === true ? 
+      <>
+      <div>{postre.name}</div>
+      <div>{postre.price}</div> </> : null
+      ))}
       </ul>
       <p className="despliegue">Total:$</p>
       <button  className="enviar" id="postres">Enviar</button>

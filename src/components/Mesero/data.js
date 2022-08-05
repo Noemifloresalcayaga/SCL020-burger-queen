@@ -3,17 +3,20 @@
     {
       id: 1,
       name: "Pie de limon",
-      price: 2500
+      price: 2500,
+      selected: false,
     },
     {
       id: 2,
       name: "Brownie VeggieHappy",
-      price: 3500
+      price: 3500,
+      selected: false,
     },
     {
       id: 3,
       name: "Flan de tofu",
-      price: 2500
+      price: 2500,
+      selected: false,
     },
   ];
   export const entradas =[

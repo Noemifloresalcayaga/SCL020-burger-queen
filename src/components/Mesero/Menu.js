@@ -1,47 +1,39 @@
-import { useState } from "react";
-import {postres, entradas,hamburguesas, acompañamientos} from "./data.js"
-//meter la data y crear funciones para llamarla
-export function MenuPostres () {
-  const [add, setAdd] = useState("");
-    
-    const handleClick = (id) => {
-        }
 
 
-   const listItems = postres.map((postre) => (
 
-    
-    <li key={postre.id} onClick={(id) => handleClick(postre.id)}>{postre.name}</li>
+export function MenuPostres ({postre, handleSelect}) {
+  const handleClick = () => {
    
-  ));
+      handleSelect(postre.id)
+  }
   
-  return (  <ul >{listItems}</ul> );
+  return (  <ul onClick={handleClick} >{postre.name}</ul> );
 }
-export function MenuEntradas () {
+// export function MenuEntradas () {
 
-  const listItems = entradas.map((entrada) => (
+//   const listItems = entradas.map((entrada) => (
    
-   <li key={entrada.id}>{entrada.name}</li>
- ));
+//    <li key={entrada.id}>{entrada.name}</li>
+//  ));
  
- return (  <ul>{listItems}</ul> );
-}
-export function MenuHamburguesas () {
+//  return (  <ul>{listItems}</ul> );
+// }
+// export function MenuHamburguesas () {
 
-  const listItems = hamburguesas.map((hamburguesa) => (
+//   const listItems = hamburguesas.map((hamburguesa) => (
    
-   <li key={hamburguesa.id}>{hamburguesa.name}</li>
- ));
+//    <li key={hamburguesa.id}>{hamburguesa.name}</li>
+//  ));
  
- return (  <ul>{listItems}</ul> );
-}
+//  return (  <ul>{listItems}</ul> );
+// }
 
-export function Acompañamientos () {
+// export function Acompañamientos () {
 
-  const listItems = acompañamientos.map((acompañamiento) => (
+//   const listItems = acompañamientos.map((acompañamiento) => (
    
-   <li key={acompañamiento.id}>{acompañamiento.name}</li>
- ));
+//    <li key={acompañamiento.id}>{acompañamiento.name}</li>
+//  ));
  
- return (  <ul>{listItems}</ul> );
-}
+//  return (  <ul>{listItems}</ul> );
+// }

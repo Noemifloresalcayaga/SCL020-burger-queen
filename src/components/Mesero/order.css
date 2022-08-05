@@ -23,6 +23,12 @@
     flex-direction: column;
   }
 
+  .lista{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+  }
+
   .cliente{
     font-family: 'Montserrat', sans-serif;
     width: 170px;
