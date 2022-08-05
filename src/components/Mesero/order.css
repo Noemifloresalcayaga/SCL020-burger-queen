@@ -238,9 +238,8 @@
   .total {  
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: -1fr 1fr;
     grid-auto-columns: 1fr;
-    gap: 65px 0px;
     grid-auto-flow: row;
     grid-template-areas:
       "."
