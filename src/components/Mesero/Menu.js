@@ -20,6 +20,28 @@ export function MenuEntradas ({entrada, handleSelect}) {
   
   return (  <li onClick={handleClick} >{entrada.name}</li> );
 }
+
+
+
+export function MenuHamburguesas ({hamburguesa, handleSelect}) {
+  const handleClick = () => {
+   
+      handleSelect(hamburguesa.id)
+      
+  }
+  
+  return (  <li onClick={handleClick} >{hamburguesa.name}</li> );
+}
+
+export function MenuAcompañamientos ({acompañamiento, handleSelect}) {
+  const handleClick = () => {
+   
+      handleSelect(acompañamiento.id)
+      
+  }
+  
+  return (  <li onClick={handleClick} >{acompañamiento.name}</li> );
+}
 // export function MenuEntradas () {
 
 //   const listItems = entradas.map((entrada) => (

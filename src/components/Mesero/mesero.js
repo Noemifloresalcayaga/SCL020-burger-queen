@@ -1,7 +1,7 @@
 import React, {useState, useRef} from "react";
 import style from "./order.css"
 import Nombre from "./Nombre"
-import {MenuPostres, MenuEntradas}from"./Menu.js"
+import {MenuPostres, MenuEntradas, MenuHamburguesas, MenuAcompañamientos}from"./Menu.js"
 import {postres, entradas,hamburguesas, acompañamientos} from "./data.js"
 
 
@@ -10,6 +10,9 @@ function Mesero() {
   //menuid i set menuid
   const [postresMesero, setPostresMesero]  = useState(postres);
   const [entradasMesero, setEntradasMesero]  = useState(entradas);
+  const [hamburguesasMesero, setHamburguesasMesero]  = useState(hamburguesas);
+  const [acompañamientosMesero, setAcompañamientosMesero]  = useState(acompañamientos);
+
 
   const [menuId,setMenuId] = useState(0);
   const dropdownRef = useRef(null);
@@ -36,6 +39,22 @@ function Mesero() {
     const newEntrada = newEntradas.find((entrada)=> id == entrada.id)
     newEntrada.selected = true
     setEntradasMesero(newEntradas)
+  }
+
+  function handleSelecte (id){  
+    const newHamburguesas = [...hamburguesasMesero]
+   
+    const newHamburguesa = newHamburguesas.find((hamburguesa)=> id == hamburguesa.id)
+    newHamburguesa.selected = true
+    setHamburguesasMesero(newHamburguesas)
+  }
+
+  function handleSel (id){  
+    const newAcompañamientos = [...acompañamientosMesero]
+   
+    const newAcompañamiento = newAcompañamientos.find((acompañamiento)=> id == acompañamiento.id)
+    newAcompañamiento.selected = true
+    setAcompañamientosMesero(newAcompañamientos)
   }
   //map
     return (
@@ -82,7 +101,11 @@ function Mesero() {
           ref={style.dropdownRef}
           className={`menu ${menuId == 3 ?"active" : "inactive"}`}
         >
-         
+                  
+        {hamburguesasMesero.map((hamburguesas) => (
+            
+            <MenuHamburguesas hamburguesa = {hamburguesas} handleSelect = {handleSelecte}/>
+          ) )}
          
         </nav>
       </div>
@@ -94,6 +117,10 @@ function Mesero() {
           ref={style.dropdownRef}
           className={`menu ${menuId == 4 ? "active" : "inactive"}`}
         >
+        {acompañamientosMesero.map((acompañamientos) => (
+            
+            <MenuAcompañamientos acompañamiento = {acompañamientos} handleSelect = {handleSel}/>
+          ) )}  
         </nav>
         
       </div>
@@ -111,8 +138,18 @@ function Mesero() {
         <div>{entrada.name}</div>
         <div>{entrada.price}</div> </> : null
       ))}
+        {hamburguesasMesero.map((hamburguesa) => (hamburguesa.selected === true ? 
+        <>
+        <div>{hamburguesa.name}</div>
+        <div>{hamburguesa.price}</div> </> : null
+      ))}
+        {acompañamientosMesero.map((acompañamiento) => (acompañamiento.selected === true ? 
+        <>
+        <div>{acompañamiento.name}</div>
+        <div>{acompañamiento.price}</div> </> : null
+      ))}
       </ul>
-      <p className="despliegue">Total:$</p>
+      <p className="despliegue">Total: </p>
       <button  className="enviar" id="postres">Enviar</button>
       </footer>
       </div>

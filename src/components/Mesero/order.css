@@ -221,6 +221,7 @@
       ". .";
     grid-area: menu;
     margin-left: 68px;
+    margin-bottom: 172px;
   }
 
   .div4 
@@ -250,7 +251,7 @@
   
   .despliegue {  
     display: grid;
-    grid-template-columns: 1fr 1.5fr;
+    grid-template-columns: 0.3fr 1.5fr;
     grid-template-rows: 0.5fr 1fr;
     gap: 0px 0px;
     grid-auto-flow: row;
