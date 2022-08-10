@@ -30,6 +30,7 @@ function Mesero() {
    
     const newPostre = newPostres.find((postre)=> id == postre.id)
     newPostre.selected = true
+    //que sume
     setPostresMesero(newPostres)
   }
 
