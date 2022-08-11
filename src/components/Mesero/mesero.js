@@ -13,14 +13,13 @@ function Mesero() {
 
   return (
   <>
-  <section>
-  <form className="div2 nombre" onSubmit={(ev)=> Context.handleSubmit(ev)}>
+  <div className="parent"> 
+   <form className="div2 nombre" onSubmit={(ev)=> Context.handleSubmit(ev)}>
         <input className="save" type="text" name="save" autoComplete="off" placeholder="Ingresa nombre"></input>
         <button className="cliente" type="submit">Ingresar cliente</button>
         <p>Pedido de: {Context.save}</p>
   </form>
-  </section>
-  <section>
+    <section>
     <Menu />
   </section>
   <section>  
@@ -28,7 +27,8 @@ function Mesero() {
   </section>
   <section>
     <Total />  
-  </section>  
+  </section>
+  </div>  
   </>
       )
 }

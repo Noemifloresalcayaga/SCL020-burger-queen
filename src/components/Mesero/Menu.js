@@ -20,7 +20,7 @@ const Menu = () => {
 
   return(
     <>
- 
+
     <section  className="div3 items grid">
         {/* <button onClick={()=> onClick(1)} className="opciones"> */}
       <div className="menu-postres">
@@ -60,6 +60,7 @@ const Menu = () => {
         ))}
     
       </section>
+      
       </>
   )
 }
