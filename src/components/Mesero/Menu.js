@@ -28,30 +28,28 @@ const Menu = () => {
             className="opciones"
             onClick={() => filterMenu('postre')}>Postres</button>
       </div>   
+      <div className="menu-postres">
         <button
             className="opciones"
             onClick={() => filterMenu('acompañamientos')}>Acompañamientos</button>
-
+      </div>
+      <div className="menu-postres">
         <button
             className="opciones"
             onClick={() => filterMenu('hamburguesas')}>Hamburguesas</button>
-
+      </div>
+      <div className="menu-postres">
         <button
             className="opciones"
-            onClick={() => filterMenu('entradas')}>Entradas</button>   
-          {/* <span className="postres">Postres</span> */}
-                {/* <nav
-          ref={style.dropdownRef}
-          className={`menu ${menuId == 1 ? "active" : "inactive"}`}>
-         </nav> */}
-        
-        </section>
+            onClick={() => filterMenu('entrada')}>Entradas</button>
+      </div>   
+     </section>
 
-         <section className="boxcarta">
+      <section className="menu">
         {product.map((item) => (
           <div key={item.id}>
             <button
-              className="menu"
+              className="menu.active"
               onClick={() => Context.add(item) }>
               <p className="namecarta" >{item.name} {item.price}</p>
             </button>
