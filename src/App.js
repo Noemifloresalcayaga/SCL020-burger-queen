@@ -4,7 +4,7 @@ import './App.css';
 import Home from "./components/home/home.js"
 import Mesero from "./components/Mesero/mesero.js"
 import Chef from "./components/Chef/chef.js"
-// import { UserProvider } from "./userProvider";
+import { MenuProvider } from "./context/Context";
 
 //useState guarda los estados dentro de nuestras aplicacione.
 
@@ -17,12 +17,13 @@ function App() {
   return (
     <div className="App">
       <img  className="logo" src={require("./img/logo.png")} alt="logo" />
-
+      <MenuProvider>
        <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/Mesero" element={<Mesero/>} />
         <Route path="/Chef" element={<Chef/>} />
         </Routes>
+      </MenuProvider>
         
 
 

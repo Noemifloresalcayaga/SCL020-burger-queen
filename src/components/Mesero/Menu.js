@@ -1,72 +1,147 @@
+import React, {useState, useContext} from "react";
+import { MenuContext } from "../../context/Context";
+import data from "../../Data/data.json"
 
+const Menu = () => {
 
-
-export function MenuPostres ({postre, handleSelect}) {
-  const handleClick = () => {
+  //se llama a la data
+  const cartData = data.menu;
+  const [product, setProduct] = useState([]);
+  //option es un item.
+  const filterMenu = (option) =>{
    
-      handleSelect(postre.id)
-      
+    setProduct(cartData.filter((e) => e.type === option))
+    
   }
+
   
-  return (  <li onClick={handleClick} >{postre.name}</li> );
-}
-
-export function MenuEntradas ({entrada, handleSelect}) {
-  const handleClick = () => {
-   
-      handleSelect(entrada.id)
-      
-  }
-  
-  return (  <li onClick={handleClick} >{entrada.name}</li> );
-}
+  const Context = useContext(MenuContext);
 
 
-
-export function MenuHamburguesas ({hamburguesa, handleSelect}) {
-  const handleClick = () => {
-   
-      handleSelect(hamburguesa.id)
-      
-  }
-  
-  return (  <li onClick={handleClick} >{hamburguesa.name}</li> );
-}
-
-export function MenuAcompañamientos ({acompañamiento, handleSelect}) {
-  const handleClick = () => {
-   
-      handleSelect(acompañamiento.id)
-      
-  }
-  
-  return (  <li onClick={handleClick} >{acompañamiento.name}</li> );
-}
-// export function MenuEntradas () {
-
-//   const listItems = entradas.map((entrada) => (
-   
-//    <li key={entrada.id}>{entrada.name}</li>
-//  ));
+  return(
+    <>
  
-//  return (  <ul>{listItems}</ul> );
+    <section>
+        {/* <button onClick={()=> onClick(1)} className="opciones"> */}
+        <section>
+        <button
+            className="opciones"
+            onClick={() => filterMenu('postre')}>Postres</button> 
+        
+        <button
+            className="opciones"
+            onClick={() => filterMenu('acompañamientos')}>Acompañamientos</button>
+
+        <button
+            className="opciones"
+            onClick={() => filterMenu('hamburguesas')}>Hamburguesas</button>
+
+        <button
+            className="opciones"
+            onClick={() => filterMenu('entradas')}>Entradas</button>   
+          {/* <span className="postres">Postres</span> */}
+                {/* <nav
+          ref={style.dropdownRef}
+          className={`menu ${menuId == 1 ? "active" : "inactive"}`}>
+         </nav> */}
+        
+        </section>
+
+         <section className="boxcarta">
+        {product.map((item) => (
+          <div key={item.id}>
+            <button
+              className="productos"
+              onClick={() => Context.add(item) }>
+              <p className="namecarta" >{item.name} {item.price}</p>
+            </button>
+            {/* <li onClick={handleClick} >{postre.name}</li>  */}
+          </div>
+        ))}
+    
+      </section>
+      </section>
+      </>
+  )
+}
+
+export default Menu
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// export function MenuPostres ({postre, handleSelect}) {
+//   const handleClick = () => {
+   
+//       handleSelect(postre.id)
+      
+//   }
+  
+//   return (  <li onClick={handleClick} >{postre.name}</li> );
 // }
-// export function MenuHamburguesas () {
 
-//   const listItems = hamburguesas.map((hamburguesa) => (
+// export function MenuEntradas ({entrada, handleSelect}) {
+//   const handleClick = () => {
    
-//    <li key={hamburguesa.id}>{hamburguesa.name}</li>
-//  ));
- 
-//  return (  <ul>{listItems}</ul> );
+//       handleSelect(entrada.id)
+      
+//   }
+  
+//   return (  <li onClick={handleClick} >{entrada.name}</li> );
 // }
 
-// export function Acompañamientos () {
 
-//   const listItems = acompañamientos.map((acompañamiento) => (
+
+// export function MenuHamburguesas ({hamburguesa, handleSelect}) {
+//   const handleClick = () => {
    
-//    <li key={acompañamiento.id}>{acompañamiento.name}</li>
-//  ));
- 
-//  return (  <ul>{listItems}</ul> );
+//       handleSelect(hamburguesa.id)
+      
+//   }
+  
+//   return (  <li onClick={handleClick} >{hamburguesa.name}</li> );
+// }
+
+// export function MenuAcompañamientos ({acompañamiento, handleSelect}) {
+//   const handleClick = () => {
+   
+//       handleSelect(acompañamiento.id)
+      
+//   }
+  
+//   return (  <li onClick={handleClick} >{acompañamiento.name}</li> );
 // }

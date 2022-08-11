@@ -1,36 +1,61 @@
-//import {  useState, } from "react";
-//import { OrderContext } from "./UserContext"
+import React, {useContext} from "react";
+import { MenuContext } from "../../context/Context";
 
+const Comanda = () => { 
+    const Context = useContext(MenuContext);
 
-//export const AddItems = ({children}) => { 
-  
-    //const [add, setAdd] = useState("");
-    
-    //const addItem = (id) => {
-       // if(id === id){
-           // setAdd(count+1)
-        //}else {
-            ///(id != id)
-           /// setAdd
-        //}
-    //console.log(addItem)
-    //}
+    return (
+    <>
+        <section className="lol">
+      <section className="lol">
+        <div className="lol">
+          {/* <p>Cliente:</p>
+          <p>{Context.name}</p>
+          <p>Mesa:</p>
+          <p>{Context.table}</p> */}
+        </div>
+      </section>
+      <section className="lol">
+        {Context.product.map((item) => (
+          <div key={item.id} className="lol">
+            <div className="lol">
+              <p className="lol">{item.name}</p>
+              <p> {item.price}</p>
 
-   // return(
-       // <OrderContext.Provider value={add}>
-           
-               /// {children}
-            
-        //</OrderContext.Provider>
+              <div className="lol">
+                <button
+                  className="lol"
+                  onClick={(e) => Context.rest(item)}
+                >
+                  {' '}
+                  -
+                </button>
+                <p className="lol">{item.quant}</p>
+                <button
+                  className="lol"
+                  onClick={() => Context.add(item)}
+                >
+                  {' '}
+                  +
+                </button>
+                <button
+                  className="lol"
+                  onClick={() => Context.erase(item.id)}
+                >
+                  {' '}
+                  x
+                </button>
+              </div>
+            </div>
+          </div>
+        ))}
+      </section>
+    </section>
+  <p>Pedido de: {Context.save}</p>
 
-    //);
-//}
-//state setstate context
+    </>
 
-//lo que mandamos  como value del context (linea 37) es un objeto que vaa incluir el state (18-20 ) y las funciones
-//que maneja en el state.
-//crear un nuevo objeto que incliuya la linea 23 y 24 y la metamos en la 38
+)
+};
 
-// tiene que venir el valor del click que se hace en el listado de items e imprimirlo
-// en la lista <ul> que hay abajo en items
-
+export default Comanda;
