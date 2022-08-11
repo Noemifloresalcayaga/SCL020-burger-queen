@@ -21,13 +21,13 @@ const Menu = () => {
   return(
     <>
  
-    <section>
+    <section  className="div3 items grid">
         {/* <button onClick={()=> onClick(1)} className="opciones"> */}
-        <section>
+      <div className="menu-postres">
         <button
             className="opciones"
-            onClick={() => filterMenu('postre')}>Postres</button> 
-        
+            onClick={() => filterMenu('postre')}>Postres</button>
+      </div>   
         <button
             className="opciones"
             onClick={() => filterMenu('acompañamientos')}>Acompañamientos</button>
@@ -51,7 +51,7 @@ const Menu = () => {
         {product.map((item) => (
           <div key={item.id}>
             <button
-              className="productos"
+              className="menu"
               onClick={() => Context.add(item) }>
               <p className="namecarta" >{item.name} {item.price}</p>
             </button>
@@ -59,7 +59,6 @@ const Menu = () => {
           </div>
         ))}
     
-      </section>
       </section>
       </>
   )
