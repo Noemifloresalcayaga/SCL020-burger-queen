@@ -8,7 +8,7 @@ const [product, setProduct] = useState([]);
 
 const [save, setSave] = useState("");
   
-  const handleSubmit = (ev) => {ev.preventDefault();
+  const handleSubmit = (ev) => {ev.preventDefault(); 
       setSave(ev.target.save.value);
       }
 

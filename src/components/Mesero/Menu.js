@@ -1,16 +1,24 @@
 import React, {useState, useContext} from "react";
 import { MenuContext } from "../../context/Context";
 import data from "../../Data/data.json"
+import Nav from "./Nav";
 
 const Menu = () => {
 
   //se llama a la data
   const cartData = data.menu;
   const [product, setProduct] = useState([]);
+  const [optionMenu, setOptionMenu] = useState("")
   //option es un item.
   const filterMenu = (option) =>{
    
     setProduct(cartData.filter((e) => e.type === option))
+    if (optionMenu == option){
+      setOptionMenu('')
+    }else {
+      setOptionMenu(option)
+    }
+
     
   }
 
@@ -27,38 +35,34 @@ const Menu = () => {
         <button
             className="opciones"
             onClick={() => filterMenu('postre')}>Postres</button>
+           
+        { optionMenu == 'postre' && <Nav product = {product} />}
       </div>   
       <div className="menu-postres">
         <button
             className="opciones"
             onClick={() => filterMenu('acompañamientos')}>Acompañamientos</button>
+        
+        { optionMenu == 'acompañamientos' && <Nav product = {product} />}   
       </div>
       <div className="menu-postres">
         <button
             className="opciones"
             onClick={() => filterMenu('hamburguesas')}>Hamburguesas</button>
+        
+        { optionMenu == 'hamburguesas' && <Nav product = {product} />}
       </div>
       <div className="menu-postres">
         <button
             className="opciones"
             onClick={() => filterMenu('entrada')}>Entradas</button>
+            
+        { optionMenu == 'entrada' && <Nav product = {product} />}
+            
       </div>   
      </section>
 
-      <section className="menu">
-        {product.map((item) => (
-          <div key={item.id}>
-            <button
-              className="menu.active"
-              onClick={() => Context.add(item) }>
-              <p className="namecarta" >{item.name} {item.price}</p>
-            </button>
-            {/* <li onClick={handleClick} >{postre.name}</li>  */}
-          </div>
-        ))}
-    
-      </section>
-      
+     
       </>
   )
 }
