@@ -25,7 +25,7 @@ function Mesero() {
   <section>  
     <Comanda />
   </section>
-  <section>
+  <section className="comanda">
     <Total />  
   </section>
   </div>  

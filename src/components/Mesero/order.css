@@ -51,7 +51,7 @@
     border-radius: 20px;
   }
 
-  .footer{
+  .comanda{
     display: flex;
     flex-direction: column;
   
@@ -76,8 +76,8 @@
     font-family: 'Montserrat', sans-serif;
     font-size: 25px;
     border-radius: 30px;
-    width: 170px;
-    height: 90px;
+    width: 250px;
+    height: 50px;
     background-color: #D35E18;
     color: #fff;
     position: absolute;
@@ -298,6 +298,16 @@
     .div3 { grid-area: 3 / 1 / 4 / 2; }
     .div4 { grid-area: 4 / 1 / 5 / 2; }
     .div5 { grid-area: 5 / 1 / 6 / 2; }
+
+    .btnes{
+      cursor: pointer;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 40px;
+        width: 40px;
+    }
 
 /* 
     .id1{

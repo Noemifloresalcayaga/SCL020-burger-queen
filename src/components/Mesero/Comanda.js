@@ -6,25 +6,17 @@ const Comanda = () => {
 
     return (
     <>
-        <section className="lol">
-      <section className="lol">
-        <div className="lol">
-          {/* <p>Cliente:</p>
-          <p>{Context.name}</p>
-          <p>Mesa:</p>
-          <p>{Context.table}</p> */}
-        </div>
-      </section>
-      <section className="lol">
+        
+      <section className="comanda">
         {Context.product.map((item) => (
           <div key={item.id} className="lol">
-            <div className="lol">
+            <div className="comanda">
               <p className="lol">{item.name}</p>
               <p> {item.price}</p>
 
               <div className="lol">
                 <button
-                  className="lol"
+                  className="btnes"
                   onClick={(e) => Context.rest(item)}
                 >
                   {' '}
@@ -32,26 +24,29 @@ const Comanda = () => {
                 </button>
                 <p className="lol">{item.quant}</p>
                 <button
-                  className="lol"
+                  className="btnes"
                   onClick={() => Context.add(item)}
                 >
                   {' '}
                   +
                 </button>
                 <button
-                  className="lol"
+                  className="btnes"
                   onClick={() => Context.erase(item.id)}
                 >
                   {' '}
                   x
                 </button>
+                <p>Pedido de: {Context.save}</p>
+                <button className="enviar">Enviar</button>
               </div>
             </div>
           </div>
         ))}
+        
       </section>
-    </section>
-  <p>Pedido de: {Context.save}</p>
+    
+  
 
     </>
 
