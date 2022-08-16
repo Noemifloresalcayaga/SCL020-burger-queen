@@ -25,7 +25,7 @@ const Nav = ({product}) => {
              <button
                className="menu.active"
                onClick={() => Context.add(item) }>
-               <p className="namecarta" >{item.name} {item.price}</p>
+               <p className="namecarta" >{item.name} ${item.price}</p>
              </button>
              </div>
             ))}

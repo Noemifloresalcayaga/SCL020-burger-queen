@@ -7,22 +7,23 @@ const Comanda = () => {
     return (
     <>
         
-      <section className="comanda">
+      <section className="div4 comanda">
         {Context.product.map((item) => (
-          <div key={item.id} className="lol">
-            <div className="comanda">
-              <p className="lol">{item.name}</p>
-              <p> {item.price}</p>
+          <div key={item.id} >
+            <div className="poto">
+              <p>{item.name}
+              {' '}
+              ${item.price}</p>
 
-              <div className="lol">
+              
                 <button
                   className="btnes"
-                  onClick={(e) => Context.rest(item)}
+                  onClick={() => Context.rest(item)}
                 >
                   {' '}
                   -
                 </button>
-                <p className="lol">{item.quant}</p>
+                <p> { item.quant } </p>
                 <button
                   className="btnes"
                   onClick={() => Context.add(item)}
@@ -37,14 +38,15 @@ const Comanda = () => {
                   {' '}
                   x
                 </button>
-                <p>Pedido de: {Context.save}</p>
-                <button className="enviar">Enviar</button>
               </div>
             </div>
-          </div>
+          
+          
         ))}
-        
+        <p>Pedido de: {Context.save}</p>
+        <button className="enviar">Enviar</button>
       </section>
+      
     
   
 
