@@ -22,11 +22,11 @@ const Nav = ({product}) => {
     <section className="menu">
          {product.map((item) => (
            <div key={item.id}>
-             <button
+             <ul
                className="menu.active"
                onClick={() => Context.add(item) }>
                <p className="namecarta" >{item.name} ${item.price}</p>
-             </button>
+             </ul>
              </div>
             ))}
     </section>
